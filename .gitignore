@@ -1,0 +1,113 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data release: allow only public source documents and handoff artifacts.
+# Runtime databases, tools, test files and duplicate ZIP releases stay ignored.
+data/*
+!data/sources.md
+!data/README-data.md
+!data/source_catalog.json
+!data/raw/
+data/raw/*
+!data/raw/*.pdf
+!data/raw/cutoffs_2026_official.html
+!data/raw/cutoffs_2026_rows_1_47.jpg
+!data/raw/cutoffs_2026_rows_48_68.jpg
+!data/manifests/
+data/manifests/*
+!data/manifests/*.json
+!data/schemas/
+data/schemas/*
+!data/schemas/*.json
+!data/normalized/
+data/normalized/*
+!data/normalized/*.jsonl
+!data/normalized/*.md
+!data/normalized/*.json
+!data/extracted/
+data/extracted/**
+!data/extracted/**/
+!data/extracted/**/*.json
+!data/extracted/**/*.jsonl
+!data/extracted/**/*.txt
+!data/processed/
+data/processed/*
+!data/processed/chunks.jsonl
+!data/processed/release.json
+!data/quality/
+data/quality/*
+!data/quality/report.md
+!data/quality/issues.jsonl
+!data/quality/page_inventory.jsonl
+!data/quality/validation.json
+!data/eval/
+data/eval/*
+!data/eval/retrieval-dev.jsonl
+!data/evaluation/
+data/evaluation/*
+!data/evaluation/*.jsonl
+*.db
+*.sqlite3
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite3-wal
+*.sqlite3-shm
+
+# Logs
+logs/
+*.log
+
+# Test coverage
+htmlcov/
+.coverage
+coverage.xml
+.coverage.*
+.pytest_cache/
+.ruff_cache/
+
+
+# Docker
+docker-compose.override.yml
+
+# Node (frontend)
+node_modules/
+.next/
+out/
+.nuxt/
+
+# Build
+*.pyc
+*.pyo
+
+# Local AI tool logs
+.ai-log/

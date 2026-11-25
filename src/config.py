@@ -1,0 +1,91 @@
+from functools import lru_cache
+from typing import Literal
+
+from pydantic import AliasChoices, Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
+
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        extra="ignore",
+    )
+
+    # App
+    app_name: str = "HUST Admissions AI"
+    app_env: Literal["development", "production", "test"] = "development"
+    app_port: int = Field(default=8000, ge=1, le=65535)
+    app_host: str = "0.0.0.0"
+    log_level: Literal["DEBUG", "INFO", "WARNING", "ERROR"] = "INFO"
+    cors_origins: str = "http://localhost:3000"
+
+    # LLM
+    openai_api_key: str = ""
+    llm_provider: Literal["openai", "deepseek"] = "openai"
+    deepseek_api_key: str = ""
+    deepseek_model: str = "deepseek-flash"
+    model_name: str = "gpt-4o-mini"
+    llm_temperature: float = Field(default=0.7, ge=0.0, le=2.0)
+
+    # Database
+    database_url: str = "sqlite:///./data/app.db"
+
+    # Vector Store
+    chroma_persist_dir: str = "./data/chroma"
+    retrieval_mode: Literal["bm25", "hybrid"] = "bm25"
+    rag_database_url: str = ""
+    rag_model_cache: str = "data/tools/models"
+    rag_candidates: int = Field(default=8, ge=4, le=32)
+
+
+    # Local MVP. LLM is opt-in so a demo never spends money implicitly.
+    answer_mode: Literal["extractive", "llm"] = "extractive"
+    staff_username: str = "canbo"
+    staff_password: str = "Demo@2026!"
+    # Google OAuth is opt-in. A configured allow-list is required so a Google
+    # account alone never grants access to the staff dashboard.
+    google_client_id: str = ""
+    google_client_secret: str = ""
+    google_redirect_uri: str = "http://127.0.0.1:8000/api/v1/staff/google/callback"
+    google_student_redirect_uri: str = "http://127.0.0.1:8000/api/v1/auth/google/callback"
+    google_allowed_emails: str = ""
+    google_allowed_email_domains: str = ""
+    # Student accounts and SMTP email verification.
+    auth_secret: str = ""
+    smtp_host: str = ""
+    smtp_port: int = Field(default=587, ge=1, le=65535)
+    smtp_user: str = Field(default="", validation_alias=AliasChoices("SMTP_USER", "SMTP_USERNAME"))
+    smtp_password: str = ""
+    smtp_from: str = Field(default="", validation_alias=AliasChoices("SMTP_FROM", "SMTP_FROM_EMAIL"))
+    smtp_from_name: str = "HUST Admissions AI"
+    smtp_security: Literal["starttls", "ssl"] = "starttls"
+    smtp_starttls: bool = Field(default=True, validation_alias=AliasChoices("SMTP_STARTTLS"))
+    smtp_timeout: int = Field(default=15, ge=3, le=60)
+    # Resend uses HTTPS and works on Railway plans where outbound SMTP is blocked.
+    resend_api_key: str = ""
+    resend_from: str = Field(default="", validation_alias=AliasChoices("RESEND_FROM"))
+    public_base_url: str = "http://127.0.0.1:8000"
+    verification_code_minutes: int = Field(default=10, ge=5, le=60)
+    otp_resend_seconds: int = Field(default=30, ge=10, le=300)
+    verification_max_attempts: int = Field(default=5, ge=1, le=10)
+    staff_invite_hours: int = Field(default=48, ge=1, le=168)
+    admin_username: str = "admin"
+    admin_password: str = "Admin@2026!"
+    admin_stale_hours: int = Field(default=24, ge=1, le=720)
+    reporting_timezone: str = "Asia/Ho_Chi_Minh"
+    # The bundled source files live in MVP_DATA_DIR. Runtime state (accounts,
+    # tickets, sessions and audit history) must live on a persistent volume in
+    # production so a new container image cannot reset the application state.
+    persistent_data_dir: str = ""
+    mvp_data_dir: str = "data"
+    session_hours: int = Field(default=24, ge=1, le=168)
+    secure_cookies: bool = False
+    llm_daily_limit: int = Field(default=100, ge=0, le=10000)
+    llm_timeout: int = Field(default=15, ge=1, le=20)
+    llm_max_output_tokens: int = Field(default=1200, ge=128, le=2000)
+
+
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()

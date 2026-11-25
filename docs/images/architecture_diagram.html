@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sơ đồ Cấu trúc Hệ thống Kỹ thuật · Trợ lý Tuyển sinh HUST 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #070a13;
+      color: #f1f5f9;
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1320px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .top-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      padding: 12px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .hust-badge {
+      background: #b91c1c;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: #e2e8f0;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn:hover {
+      background: #27354f;
+      border-color: #64748b;
+      color: #fff;
+    }
+    .btn.primary {
+      background: #b91c1c;
+      border-color: #ef4444;
+      color: #fff;
+    }
+    .btn.primary:hover {
+      background: #dc2626;
+    }
+    .image-wrapper {
+      width: 100%;
+      background: #0b0f19;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+    .summary-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .metric-box {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+    .metric-box h3 {
+      font-size: 14px;
+      color: #38bdf8;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .metric-box p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #cbd5e1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-toolbar">
+      <div class="brand-title">
+        <span class="hust-badge">HUST 2026</span>
+        <span>Sơ Đồ Kiến Trúc Hệ Thống Kỹ Thuật (Production Architecture)</span>
+      </div>
+      <div class="actions">
+        <button class="btn" onclick="window.print()">🖨️ In / Xuất PDF</button>
+        <a class="btn" href="so_do_cau_truc_he_thong.png" download="so_do_cau_truc_he_thong.png">🖼️ Tải PNG 4K</a>
+        <a class="btn primary" href="so_do_cau_truc_he_thong.svg" download="so_do_cau_truc_he_thong.svg">⬇️ Tải file SVG gốc</a>
+      </div>
+    </div>
+
+    <div class="image-wrapper" id="diagram-view">
+      <img src="so_do_cau_truc_he_thong.svg" alt="Sơ đồ cấu trúc kỹ thuật hệ thống Trợ lý tuyển sinh HUST 2026">
+    </div>
+
+    <div class="summary-card">
+      <div class="metric-box">
+        <h3><span>🖥️</span> Tầng 1: Client & Giao diện</h3>
+        <p>Giao diện Web Chat phản hồi thời gian thực SSE, bộ lọc mã ngành Scope Guidance, cổng cán bộ tuyển sinh (/staff) và trang quản trị (/admin).</p>
+      </div>
+      <div class="metric-box">
+        <h3><span>⚡</span> Tầng 2: FastAPI Gateway</h3>
+        <p>Cổng API chuẩn hóa: xử lý hội thoại streaming (/ask), tra cứu 68 mã ngành (/programs), điều phối ticket hỗ trợ chuyên sâu và xem PDF gốc.</p>
+      </div>
+      <div class="metric-box">
+        <h3><span>🧠</span> Tầng 3: AI Orchestration & RAG</h3>
+        <p>Phân loại ý định thông minh, tìm kiếm kết hợp Hybrid BM25 + Vector Semantic, bộ lọc kiểm chứng Grounding Gate chống ảo giác trước khi trả lời.</p>
+      </div>
+      <div class="metric-box">
+        <h3><span>💾</span> Tầng 4: Kho Dữ liệu & Giám sát</h3>
+        <p>51 trang Đề án tuyển sinh K71 trích xuất cấu trúc, 68 chương trình đào tạo chuẩn JSONL, SQLite lưu trữ vé hỗ trợ và bộ đánh giá Golden Dataset.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

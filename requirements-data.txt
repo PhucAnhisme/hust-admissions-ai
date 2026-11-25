@@ -1,0 +1,8 @@
+# Data pipeline only; intentionally separate from backend requirements.
+-r requirements-data-validation.txt
+Pillow==12.3.0
+requests>=2.32,<3
+# Windows: use a matching prebuilt wheel from
+# https://github.com/simonflueckiger/tesserocr-windows_build/releases
+# Linux: install Tesseract/Leptonica development dependencies first.
+tesserocr==2.11.0

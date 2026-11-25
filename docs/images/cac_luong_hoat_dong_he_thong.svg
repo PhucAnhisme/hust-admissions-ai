@@ -1,0 +1,498 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" style="background:#090d16; font-family:'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="canvasBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c14"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0a0f1d"/>
+    </linearGradient>
+
+    <!-- Lane 1 Gradients (Sky Blue) -->
+    <linearGradient id="lane1Badge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="step1Grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Lane 2 Gradients (Emerald Green) -->
+    <linearGradient id="lane2Badge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <!-- Lane 3 Gradients (Amber Orange) -->
+    <linearGradient id="lane3Badge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <!-- Arrow Marker -->
+    <marker id="arrowSky" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowEmerald" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#34d399"/>
+    </marker>
+    <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#fbbf24"/>
+    </marker>
+
+    <!-- Filters -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="glowSky" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#38bdf8" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1920" height="1080" fill="url(#canvasBg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="120" x2="1920" y2="120"/>
+    <line x1="0" y1="410" x2="1920" y2="410"/>
+    <line x1="0" y1="700" x2="1920" y2="700"/>
+    <line x1="0" y1="990" x2="1920" y2="990"/>
+    <line x1="370" y1="0" x2="370" y2="1080"/>
+  </g>
+
+  <!-- ================= TOP HEADER ================= -->
+  <g transform="translate(60, 36)">
+    <!-- Red Accent Pill -->
+    <rect x="0" y="0" width="135" height="30" rx="8" fill="#b91c1c"/>
+    <text x="67" y="20" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">HUST · 2026</text>
+
+    <!-- Main Title -->
+    <text x="155" y="24" fill="#ffffff" font-size="25" font-weight="800" letter-spacing="0.5">SƠ ĐỒ CÁC LUỒNG HOẠT ĐỘNG CHÍNH CỦA HỆ THỐNG</text>
+    <text x="0" y="58" fill="#94a3b8" font-size="14.5">Minh họa trực quan 3 luồng xử lý dữ liệu chuẩn xác, minh bạch từ thí sinh đến kho tài liệu gốc và cán bộ tuyển sinh</text>
+
+    <!-- Top Right Status Badges -->
+    <g transform="translate(1330, 0)">
+      <rect x="0" y="0" width="150" height="30" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="16" cy="15" r="4" fill="#10b981"/>
+      <text x="28" y="20" fill="#e2e8f0" font-size="12" font-weight="600">FastAPI SSE Live</text>
+
+      <rect x="165" y="0" width="145" height="30" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="181" cy="15" r="4" fill="#38bdf8"/>
+      <text x="193" y="20" fill="#e2e8f0" font-size="12" font-weight="600">51 Trang K71 PDF</text>
+
+      <rect x="325" y="0" width="145" height="30" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="341" cy="15" r="4" fill="#f59e0b"/>
+      <text x="353" y="20" fill="#e2e8f0" font-size="12" font-weight="600">Staff Portal /staff</text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- LUỒNG 1: HỎI ĐÁP THƯỜNG QUY & TRA CỨU RAG KIỂM CHỨNG                     -->
+  <!-- ========================================================================= -->
+  <g transform="translate(60, 125)">
+    <!-- Lane Container Box -->
+    <rect x="0" y="0" width="1800" height="265" rx="16" fill="#0d1424" stroke="#1e293b" stroke-width="1.5" filter="url(#cardShadow)"/>
+
+    <!-- Lane Header Card (Left) -->
+    <g transform="translate(20, 20)">
+      <rect x="0" y="0" width="270" height="225" rx="12" fill="url(#step1Grad)" stroke="#0284c7" stroke-width="1.5"/>
+      <rect x="18" y="18" width="85" height="24" rx="6" fill="url(#lane1Badge)"/>
+      <text x="60" y="34" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">LUỒNG 1</text>
+      
+      <text x="18" y="70" fill="#38bdf8" font-size="18" font-weight="700">Hỏi Đáp RAG &amp;</text>
+      <text x="18" y="94" fill="#ffffff" font-size="18" font-weight="700">Kiểm Chứng Nguồn</text>
+
+      <text x="18" y="125" fill="#94a3b8" font-size="12.5" line-height="1.4">
+        <tspan x="18" dy="0">• Thí sinh hỏi về quy chế, điểm,</tspan>
+        <tspan x="18" dy="18">  điều kiện XTTN, học bổng...</tspan>
+        <tspan x="18" dy="22">• AI truy xuất đúng văn bản gốc</tspan>
+        <tspan x="18" dy="18">• Dẫn số trang PDF chính thức</tspan>
+      </text>
+
+      <rect x="18" y="190" width="234" height="22" rx="4" fill="#0284c7" fill-opacity="0.15" stroke="#0284c7" stroke-width="0.8"/>
+      <text x="135" y="205" fill="#7dd3fc" font-size="11" font-weight="600" text-anchor="middle">⚡ Tốc độ phản hồi: &lt; 1 giây (SSE)</text>
+    </g>
+
+    <!-- Step 1.1: Thí sinh gửi câu hỏi -->
+    <g transform="translate(320, 20)">
+      <rect x="0" y="0" width="310" height="225" rx="12" fill="#131d31" stroke="#334155" stroke-width="1.2"/>
+      <rect x="16" y="16" width="28" height="28" rx="14" fill="#0284c7"/>
+      <text x="30" y="35" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">1</text>
+      <text x="54" y="35" fill="#e2e8f0" font-size="14" font-weight="700">Thí sinh nhập câu hỏi</text>
+
+      <!-- Mock Chat input -->
+      <g transform="translate(16, 56)">
+        <rect x="0" y="0" width="278" height="66" rx="8" fill="#0b1120" stroke="#1e293b"/>
+        <text x="12" y="24" fill="#cbd5e1" font-size="12" font-style="italic">"Điều kiện xét tuyển IT1</text>
+        <text x="12" y="44" fill="#cbd5e1" font-size="12" font-style="italic">theo điểm ĐGNL năm 2026?"</text>
+      </g>
+
+      <text x="16" y="145" fill="#94a3b8" font-size="12">
+        <tspan x="16" dy="0">• Web Chat giao diện trực quan</tspan>
+        <tspan x="16" dy="18">• Hỗ trợ chọn phạm vi ngành (Scope)</tspan>
+        <tspan x="16" dy="18">• Gửi trực tiếp tới /api/v1/ask</tspan>
+      </text>
+
+      <rect x="16" y="190" width="120" height="20" rx="4" fill="#1e293b"/>
+      <text x="76" y="204" fill="#38bdf8" font-size="10.5" font-weight="600" text-anchor="middle">Client Side</text>
+    </g>
+
+    <!-- Arrow 1 -> 2 -->
+    <line x1="638" y1="132" x2="675" y2="132" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowSky)"/>
+
+    <!-- Step 1.2: Định tuyến ý định & RAG Retrieval -->
+    <g transform="translate(685, 20)">
+      <rect x="0" y="0" width="310" height="225" rx="12" fill="#131d31" stroke="#334155" stroke-width="1.2"/>
+      <rect x="16" y="16" width="28" height="28" rx="14" fill="#0284c7"/>
+      <text x="30" y="35" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">2</text>
+      <text x="54" y="35" fill="#e2e8f0" font-size="14" font-weight="700">Ý định &amp; Hybrid Search</text>
+
+      <g transform="translate(16, 56)">
+        <rect x="0" y="0" width="278" height="30" rx="6" fill="#1e293b"/>
+        <text x="10" y="20" fill="#38bdf8" font-size="11" font-weight="600">🧠 Intent: ADMISSION_REQUIREMENT</text>
+      </g>
+
+      <text x="16" y="110" fill="#94a3b8" font-size="12">
+        <tspan x="16" dy="0">• <tspan fill="#e2e8f0" font-weight="600">BM25 Search:</tspan> khớp từ khóa mã ngành</tspan>
+        <tspan x="16" dy="18">• <tspan fill="#e2e8f0" font-weight="600">Vector Search:</tspan> hiểu ngữ nghĩa câu hỏi</tspan>
+        <tspan x="16" dy="18">• Quét đồng thời 51 trang PDF + JSONL</tspan>
+        <tspan x="16" dy="18">• Trích xuất các đoạn văn bản khớp nhất</tspan>
+      </text>
+
+      <rect x="16" y="190" width="135" height="20" rx="4" fill="#1e293b"/>
+      <text x="83" y="204" fill="#38bdf8" font-size="10.5" font-weight="600" text-anchor="middle">FastAPI Orchestrator</text>
+    </g>
+
+    <!-- Arrow 2 -> 3 -->
+    <line x1="1003" y1="132" x2="1040" y2="132" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowSky)"/>
+
+    <!-- Step 1.3: Grounding Gate (Kiểm chứng chống ảo giác) -->
+    <g transform="translate(1050, 20)">
+      <rect x="0" y="0" width="310" height="225" rx="12" fill="#131d31" stroke="#0284c7" stroke-width="1.5" filter="url(#glowSky)"/>
+      <rect x="16" y="16" width="28" height="28" rx="14" fill="#0284c7"/>
+      <text x="30" y="35" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">3</text>
+      <text x="54" y="35" fill="#e2e8f0" font-size="14" font-weight="700">Cổng Kiểm Chứng Độc Lập</text>
+
+      <g transform="translate(16, 56)">
+        <rect x="0" y="0" width="278" height="30" rx="6" fill="#0f2942" stroke="#0284c7" stroke-width="1"/>
+        <text x="10" y="20" fill="#38bdf8" font-size="11" font-weight="700">🛡️ Grounding Gate (Anti-Hallucination)</text>
+      </g>
+
+      <text x="16" y="110" fill="#94a3b8" font-size="12">
+        <tspan x="16" dy="0">• Đối chiếu câu trả lời với văn bản gốc</tspan>
+        <tspan x="16" dy="18">• <tspan fill="#f87171" font-weight="600">Loại bỏ hoàn toàn</tspan> thông tin tự suy diễn</tspan>
+        <tspan x="16" dy="18">• Đính kèm số trang cụ thể (VD: Trang 18)</tspan>
+        <tspan x="16" dy="18">• Nếu thiếu căn cứ: từ chối khẳng định bừa</tspan>
+      </text>
+
+      <rect x="16" y="190" width="135" height="20" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+      <text x="83" y="204" fill="#7dd3fc" font-size="10.5" font-weight="700" text-anchor="middle">Xác thực 100% Căn cứ</text>
+    </g>
+
+    <!-- Arrow 3 -> 4 -->
+    <line x1="1368" y1="132" x2="1405" y2="132" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowSky)"/>
+
+    <!-- Step 1.4: Phản hồi Thí sinh SSE + Citation -->
+    <g transform="translate(1415, 20)">
+      <rect x="0" y="0" width="365" height="225" rx="12" fill="#131d31" stroke="#334155" stroke-width="1.2"/>
+      <rect x="16" y="16" width="28" height="28" rx="14" fill="#10b981"/>
+      <text x="30" y="35" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">4</text>
+      <text x="54" y="35" fill="#e2e8f0" font-size="14" font-weight="700">Phản hồi Thời gian thực (SSE)</text>
+
+      <g transform="translate(16, 56)">
+        <rect x="0" y="0" width="333" height="74" rx="8" fill="#0b1120" stroke="#10b981" stroke-width="0.8"/>
+        <text x="12" y="22" fill="#e2e8f0" font-size="11.5" font-weight="600">Đạt tối thiểu điểm ĐGNL theo quy chế...</text>
+        <!-- Citation pill -->
+        <rect x="12" y="36" width="140" height="24" rx="4" fill="#b91c1c" fill-opacity="0.3" stroke="#ef4444" stroke-width="0.8"/>
+        <text x="82" y="52" fill="#fca5a5" font-size="11" font-weight="700" text-anchor="middle">📄 Đề án K71 · Trang 18</text>
+      </g>
+
+      <text x="16" y="153" fill="#94a3b8" font-size="12">
+        <tspan x="16" dy="0">• Thí sinh bấm xem trực tiếp trang PDF gốc</tspan>
+        <tspan x="16" dy="18">• Gợi ý câu hỏi tiếp theo liên quan ngành</tspan>
+      </text>
+
+      <rect x="16" y="190" width="150" height="20" rx="4" fill="#10b981" fill-opacity="0.15"/>
+      <text x="91" y="204" fill="#34d399" font-size="10.5" font-weight="600" text-anchor="middle">Hoàn tất hỏi đáp tức thì</text>
+    </g>
+  </g>
+
+
+  <!-- ========================================================================= -->
+  <!-- LUỒNG 2: TRA CỨU & ĐỐI CHIẾU 68 MÃ NGÀNH (SCOPE & COMPARE)                 -->
+  <!-- ========================================================================= -->
+  <g transform="translate(60, 415)">
+    <!-- Lane Container Box -->
+    <rect x="0" y="0" width="1800" height="265" rx="16" fill="#0a1a1f" stroke="#1e293b" stroke-width="1.5" filter="url(#cardShadow)"/>
+
+    <!-- Lane Header Card (Left) -->
+    <g transform="translate(20, 20)">
+      <rect x="0" y="0" width="270" height="225" rx="12" fill="url(#step1Grad)" stroke="#059669" stroke-width="1.5"/>
+      <rect x="18" y="18" width="85" height="24" rx="6" fill="url(#lane2Badge)"/>
+      <text x="60" y="34" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">LUỒNG 2</text>
+      
+      <text x="18" y="70" fill="#34d399" font-size="18" font-weight="700">Tra Cứu &amp; Đối Chiếu</text>
+      <text x="18" y="94" fill="#ffffff" font-size="18" font-weight="700">68 Chương Trình</text>
+
+      <text x="18" y="125" fill="#94a3b8" font-size="12.5" line-height="1.4">
+        <tspan x="18" dy="0">• So sánh chỉ tiêu, tổ hợp môn</tspan>
+        <tspan x="18" dy="18">• Tra cứu học phí &amp; chuẩn đầu ra</tspan>
+        <tspan x="18" dy="22">• Lọc chính xác theo mã IT1, IT2...</tspan>
+        <tspan x="18" dy="18">• Không bị nhầm lẫn dữ liệu</tspan>
+      </text>
+
+      <rect x="18" y="190" width="234" height="22" rx="4" fill="#059669" fill-opacity="0.15" stroke="#059669" stroke-width="0.8"/>
+      <text x="135" y="205" fill="#a7f3d0" font-size="11" font-weight="600" text-anchor="middle">📊 Dữ liệu có cấu trúc JSONL chuẩn</text>
+    </g>
+
+    <!-- Step 2.1: Chọn mã ngành / So sánh -->
+    <g transform="translate(320, 20)">
+      <rect x="0" y="0" width="310" height="225" rx="12" fill="#0e2329" stroke="#1e3a47" stroke-width="1.2"/>
+      <rect x="16" y="16" width="28" height="28" rx="14" fill="#059669"/>
+      <text x="30" y="35" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">1</text>
+      <text x="54" y="35" fill="#e2e8f0" font-size="14" font-weight="700">Thí sinh chọn ngành so sánh</text>
+
+      <!-- Scope tags -->
+      <g transform="translate(16, 56)">
+        <rect x="0" y="0" width="80" height="26" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+        <text x="40" y="17" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">IT1 (CNTT)</text>
+
+        <rect x="90" y="0" width="95" height="26" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+        <text x="137" y="17" fill="#ffffff" font-size="11" font-weight="700" text-anchor="middle">IT-E10 (Global)</text>
+      </g>
+
+      <text x="16" y="112" fill="#94a3b8" font-size="12">
+        <tspan x="16" dy="0">• Thí sinh chọn 2 hoặc nhiều ngành</tspan>
+        <tspan x="16" dy="18">• Ghim ngữ cảnh (Scope Guidance)</tspan>
+        <tspan x="16" dy="18">• Tránh trả lời lẫn lộn giữa các hệ</tspan>
+      </text>
+
+      <rect x="16" y="190" width="120" height="20" rx="4" fill="#1e293b"/>
+      <text x="76" y="204" fill="#34d399" font-size="10.5" font-weight="600" text-anchor="middle">Scope Selector</text>
+    </g>
+
+    <!-- Arrow 2.1 -> 2.2 -->
+    <line x1="638" y1="132" x2="675" y2="132" stroke="#34d399" stroke-width="2.5" marker-end="url(#arrowEmerald)"/>
+
+    <!-- Step 2.2: API Programs Query -->
+    <g transform="translate(685, 20)">
+      <rect x="0" y="0" width="310" height="225" rx="12" fill="#0e2329" stroke="#1e3a47" stroke-width="1.2"/>
+      <rect x="16" y="16" width="28" height="28" rx="14" fill="#059669"/>
+      <text x="30" y="35" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">2</text>
+      <text x="54" y="35" fill="#e2e8f0" font-size="14" font-weight="700">Truy xuất CSDL 68 Ngành</text>
+
+      <g transform="translate(16, 56)">
+        <rect x="0" y="0" width="278" height="30" rx="6" fill="#132e35"/>
+        <text x="10" y="20" fill="#34d399" font-size="11" font-weight="600">GET /api/v1/programs?codes=IT1,IT-E10</text>
+      </g>
+
+      <text x="16" y="110" fill="#94a3b8" font-size="12">
+        <tspan x="16" dy="0">• Đọc trực tiếp từ kho JSONL chuẩn hóa</tspan>
+        <tspan x="16" dy="18">• <tspan fill="#e2e8f0">Không qua suy luận LLM</tspan> để tránh nhầm số</tspan>
+        <tspan x="16" dy="18">• Khớp chính xác 100% dữ liệu phòng Đào tạo</tspan>
+      </text>
+
+      <rect x="16" y="190" width="145" height="20" rx="4" fill="#132e35"/>
+      <text x="88" y="204" fill="#34d399" font-size="10.5" font-weight="600" text-anchor="middle">Data Consistency: 100%</text>
+    </g>
+
+    <!-- Arrow 2.2 -> 2.3 -->
+    <line x1="1003" y1="132" x2="1040" y2="132" stroke="#34d399" stroke-width="2.5" marker-end="url(#arrowEmerald)"/>
+
+    <!-- Step 2.3: Tổng hợp bảng đối chiếu -->
+    <g transform="translate(1050, 20)">
+      <rect x="0" y="0" width="310" height="225" rx="12" fill="#0e2329" stroke="#1e3a47" stroke-width="1.2"/>
+      <rect x="16" y="16" width="28" height="28" rx="14" fill="#059669"/>
+      <text x="30" y="35" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">3</text>
+      <text x="54" y="35" fill="#e2e8f0" font-size="14" font-weight="700">Trích Xuất Chỉ Số Trọng Yếu</text>
+
+      <!-- Mini table preview -->
+      <g transform="translate(16, 56)">
+        <rect x="0" y="0" width="278" height="66" rx="6" fill="#08181d" stroke="#1e3a47"/>
+        <text x="10" y="20" fill="#34d399" font-size="11" font-weight="600">✓ Chỉ tiêu: 300 (IT1) vs 60 (IT-E10)</text>
+        <text x="10" y="40" fill="#cbd5e1" font-size="11">✓ Phương thức: XTTN, ĐGNL, TN THPT</text>
+        <text x="10" y="58" fill="#cbd5e1" font-size="11">✓ Học phí: 28-35 tr/năm vs 55-65 tr/năm</text>
+      </g>
+
+      <text x="16" y="145" fill="#94a3b8" font-size="12">
+        <tspan x="16" dy="0">• Cân bằng bảng chỉ tiêu &amp; điểm chuẩn</tspan>
+        <tspan x="16" dy="18">• Chuẩn bị dữ liệu hiển thị card so sánh</tspan>
+      </text>
+
+      <rect x="16" y="190" width="130" height="20" rx="4" fill="#132e35"/>
+      <text x="81" y="204" fill="#34d399" font-size="10.5" font-weight="600" text-anchor="middle">Program Comparison</text>
+    </g>
+
+    <!-- Arrow 2.3 -> 2.4 -->
+    <line x1="1368" y1="132" x2="1405" y2="132" stroke="#34d399" stroke-width="2.5" marker-end="url(#arrowEmerald)"/>
+
+    <!-- Step 2.4: Hiển thị Thẻ So Sánh Trực Quan -->
+    <g transform="translate(1415, 20)">
+      <rect x="0" y="0" width="365" height="225" rx="12" fill="#0e2329" stroke="#059669" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="16" y="16" width="28" height="28" rx="14" fill="#059669"/>
+      <text x="30" y="35" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">4</text>
+      <text x="54" y="35" fill="#e2e8f0" font-size="14" font-weight="700">Bảng So Sánh Đa Ngành</text>
+
+      <g transform="translate(16, 56)">
+        <rect x="0" y="0" width="333" height="74" rx="8" fill="#08181d" stroke="#059669" stroke-width="0.8"/>
+        <text x="12" y="22" fill="#34d399" font-size="12" font-weight="700">So sánh đối đầu: IT1 vs IT-E10</text>
+        <text x="12" y="44" fill="#e2e8f0" font-size="11.5">Ngôn ngữ đào tạo · Học phí · Cơ hội học bổng</text>
+        <text x="12" y="62" fill="#94a3b8" font-size="11">Phụ huynh và thí sinh dễ dàng chọn nguyện vọng 1, 2</text>
+      </g>
+
+      <text x="16" y="153" fill="#94a3b8" font-size="12">
+        <tspan x="16" dy="0">• Cung cấp góc nhìn toàn diện, minh bạch</tspan>
+        <tspan x="16" dy="18">• Hỗ trợ đưa ra quyết định đăng ký chính xác</tspan>
+      </text>
+
+      <rect x="16" y="190" width="165" height="20" rx="4" fill="#059669" fill-opacity="0.2"/>
+      <text x="98" y="204" fill="#6ee7b7" font-size="10.5" font-weight="700" text-anchor="middle">Trực quan hóa lựa chọn</text>
+    </g>
+  </g>
+
+
+  <!-- ========================================================================= -->
+  <!-- LUỒNG 3: ĐIỀU PHỐI VÉ TƯ VẤN & HỖ TRỢ CHUYÊN SÂU TỪ CÁN BỘ               -->
+  <!-- ========================================================================= -->
+  <g transform="translate(60, 705)">
+    <!-- Lane Container Box -->
+    <rect x="0" y="0" width="1800" height="265" rx="16" fill="#1e180d" stroke="#1e293b" stroke-width="1.5" filter="url(#cardShadow)"/>
+
+    <!-- Lane Header Card (Left) -->
+    <g transform="translate(20, 20)">
+      <rect x="0" y="0" width="270" height="225" rx="12" fill="url(#step1Grad)" stroke="#d97706" stroke-width="1.5"/>
+      <rect x="18" y="18" width="85" height="24" rx="6" fill="url(#lane3Badge)"/>
+      <text x="60" y="34" fill="#ffffff" font-size="11" font-weight="800" text-anchor="middle">LUỒNG 3</text>
+      
+      <text x="18" y="70" fill="#fbbf24" font-size="18" font-weight="700">Điều Phối Vé Tư Vấn &amp;</text>
+      <text x="18" y="94" fill="#ffffff" font-size="18" font-weight="700">Hỗ Trợ Cán Bộ Tuyển Sinh</text>
+
+      <text x="18" y="125" fill="#94a3b8" font-size="12.5" line-height="1.4">
+        <tspan x="18" dy="0">• Dành cho câu hỏi cá biệt, chính</tspan>
+        <tspan x="18" dy="18">  sách ưu tiên riêng hoặc ngoại lệ</tspan>
+        <tspan x="18" dy="22">• Chuyển tiếp ngay tới cán bộ</tspan>
+        <tspan x="18" dy="18">• Không bỏ sót bất kỳ thí sinh nào</tspan>
+      </text>
+
+      <rect x="18" y="190" width="234" height="22" rx="4" fill="#d97706" fill-opacity="0.15" stroke="#d97706" stroke-width="0.8"/>
+      <text x="135" y="205" fill="#fde68a" font-size="11" font-weight="600" text-anchor="middle">🧑‍💼 Cổng Cán bộ HUST: /staff</text>
+    </g>
+
+    <!-- Step 3.1: Nhận diện câu hỏi cá biệt -->
+    <g transform="translate(320, 20)">
+      <rect x="0" y="0" width="310" height="225" rx="12" fill="#292011" stroke="#4a361c" stroke-width="1.2"/>
+      <rect x="16" y="16" width="28" height="28" rx="14" fill="#d97706"/>
+      <text x="30" y="35" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">1</text>
+      <text x="54" y="35" fill="#e2e8f0" font-size="14" font-weight="700">Phát hiện câu hỏi ngoại lệ</text>
+
+      <!-- Mock Exception message -->
+      <g transform="translate(16, 56)">
+        <rect x="0" y="0" width="278" height="66" rx="8" fill="#1a140a" stroke="#4a361c"/>
+        <text x="12" y="24" fill="#fde68a" font-size="12" font-style="italic">"Em đạt giải quốc tế môn Tin,</text>
+        <text x="12" y="44" fill="#fde68a" font-size="12" font-style="italic">chưa tốt nghiệp THPT có được...?"</text>
+      </g>
+
+      <text x="16" y="145" fill="#94a3b8" font-size="12">
+        <tspan x="16" dy="0">• Hệ thống nhận diện nằm ngoài đề án</tspan>
+        <tspan x="16" dy="18">• Tự động mời thí sinh để lại thông tin</tspan>
+        <tspan x="16" dy="18">• Hoặc thí sinh chủ động bấm "Hỏi Cán bộ"</tspan>
+      </text>
+
+      <rect x="16" y="190" width="130" height="20" rx="4" fill="#1a140a"/>
+      <text x="81" y="204" fill="#fbbf24" font-size="10.5" font-weight="600" text-anchor="middle">Out-of-Scope Detect</text>
+    </g>
+
+    <!-- Arrow 3.1 -> 3.2 -->
+    <line x1="638" y1="132" x2="675" y2="132" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrowAmber)"/>
+
+    <!-- Step 3.2: Khởi tạo Ticket -->
+    <g transform="translate(685, 20)">
+      <rect x="0" y="0" width="310" height="225" rx="12" fill="#292011" stroke="#4a361c" stroke-width="1.2"/>
+      <rect x="16" y="16" width="28" height="28" rx="14" fill="#d97706"/>
+      <text x="30" y="35" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">2</text>
+      <text x="54" y="35" fill="#e2e8f0" font-size="14" font-weight="700">Khởi tạo Ticket Hỗ Trợ</text>
+
+      <g transform="translate(16, 56)">
+        <rect x="0" y="0" width="278" height="30" rx="6" fill="#1a140a"/>
+        <text x="10" y="20" fill="#fbbf24" font-size="11" font-weight="600">POST /api/v1/tickets (Handover)</text>
+      </g>
+
+      <text x="16" y="110" fill="#94a3b8" font-size="12">
+        <tspan x="16" dy="0">• Ghi nhận: Họ tên, Email, Điện thoại</tspan>
+        <tspan x="16" dy="18">• Đính kèm toàn bộ lịch sử câu hỏi vừa hỏi</tspan>
+        <tspan x="16" dy="18">• Cấp mã tra cứu vé (VD: <tspan fill="#fde68a" font-weight="700">#HUST-2026-982</tspan>)</tspan>
+        <tspan x="16" dy="18">• Lưu trữ an toàn trong CSDL SQLite</tspan>
+      </text>
+
+      <rect x="16" y="190" width="130" height="20" rx="4" fill="#1a140a"/>
+      <text x="81" y="204" fill="#fbbf24" font-size="10.5" font-weight="600" text-anchor="middle">Handover Pipeline</text>
+    </g>
+
+    <!-- Arrow 3.2 -> 3.3 -->
+    <line x1="1003" y1="132" x2="1040" y2="132" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrowAmber)"/>
+
+    <!-- Step 3.3: Cán bộ tiếp nhận tại /staff -->
+    <g transform="translate(1050, 20)">
+      <rect x="0" y="0" width="310" height="225" rx="12" fill="#292011" stroke="#d97706" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="16" y="16" width="28" height="28" rx="14" fill="#d97706"/>
+      <text x="30" y="35" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">3</text>
+      <text x="54" y="35" fill="#e2e8f0" font-size="14" font-weight="700">Cán Bộ Tiếp Nhận (/staff)</text>
+
+      <g transform="translate(16, 56)">
+        <rect x="0" y="0" width="278" height="30" rx="6" fill="#1a140a" stroke="#d97706" stroke-width="0.8"/>
+        <text x="10" y="20" fill="#fde68a" font-size="11" font-weight="600">🧑‍🏫 Staff Dashboard: 1 Vé mới cần duyệt</text>
+      </g>
+
+      <text x="16" y="110" fill="#94a3b8" font-size="12">
+        <tspan x="16" dy="0">• Cán bộ xem toàn bộ ngữ cảnh trao đổi</tspan>
+        <tspan x="16" dy="18">• Tham vấn hội đồng tuyển sinh nếu cần</tspan>
+        <tspan x="16" dy="18">• Soạn câu trả lời chính thức ngay trên web</tspan>
+        <tspan x="16" dy="18">• Bấm nút "Gửi phản hồi cho thí sinh"</tspan>
+      </text>
+
+      <rect x="16" y="190" width="130" height="20" rx="4" fill="#1a140a"/>
+      <text x="81" y="204" fill="#fbbf24" font-size="10.5" font-weight="600" text-anchor="middle">Staff Desk Portal</text>
+    </g>
+
+    <!-- Arrow 3.3 -> 3.4 -->
+    <line x1="1368" y1="132" x2="1405" y2="132" stroke="#fbbf24" stroke-width="2.5" marker-end="url(#arrowAmber)"/>
+
+    <!-- Step 3.4: Thí sinh nhận phản hồi qua Email -->
+    <g transform="translate(1415, 20)">
+      <rect x="0" y="0" width="365" height="225" rx="12" fill="#292011" stroke="#4a361c" stroke-width="1.2"/>
+      <rect x="16" y="16" width="28" height="28" rx="14" fill="#10b981"/>
+      <text x="30" y="35" fill="#ffffff" font-size="13" font-weight="800" text-anchor="middle">4</text>
+      <text x="54" y="35" fill="#e2e8f0" font-size="14" font-weight="700">Phản Hồi Chính Thức Qua Email</text>
+
+      <g transform="translate(16, 56)">
+        <rect x="0" y="0" width="333" height="74" rx="8" fill="#1a140a" stroke="#10b981" stroke-width="0.8"/>
+        <text x="12" y="22" fill="#34d399" font-size="12" font-weight="700">✉️ Email từ: tuyensinh@hust.edu.vn</text>
+        <text x="12" y="44" fill="#e2e8f0" font-size="11.5">Giải đáp chi tiết trường hợp thí sinh #982</text>
+        <text x="12" y="62" fill="#94a3b8" font-size="11">Kèm hướng dẫn nộp hồ sơ bổ sung trực tiếp</text>
+      </g>
+
+      <text x="16" y="153" fill="#94a3b8" font-size="12">
+        <tspan x="16" dy="0">• Thí sinh nhận được câu trả lời có giá trị pháp lý</tspan>
+        <tspan x="16" dy="18">• Khép kín luồng xử lý: Không câu hỏi nào bị bỏ quên</tspan>
+      </text>
+
+      <rect x="16" y="190" width="160" height="20" rx="4" fill="#10b981" fill-opacity="0.2"/>
+      <text x="96" y="204" fill="#6ee7b7" font-size="10.5" font-weight="700" text-anchor="middle">Cam kết giải quyết 100%</text>
+    </g>
+  </g>
+
+  <!-- ================= BOTTOM FOOTER ================= -->
+  <g transform="translate(60, 1005)">
+    <text x="0" y="20" fill="#64748b" font-size="13">
+      Đại học Bách khoa Hà Nội (HUST) · Hệ thống Trợ lý Tuyển sinh AI 2026 · Kiến trúc chuẩn hóa mã nguồn trên nhánh main
+    </text>
+
+    <g transform="translate(1320, 0)">
+      <text x="0" y="20" fill="#94a3b8" font-size="13" font-weight="600">
+        Công nghệ: <tspan fill="#38bdf8">FastAPI</tspan> · <tspan fill="#34d399">Hybrid RAG (BM25 + Semantic)</tspan> · <tspan fill="#f59e0b">Grounding Gate</tspan> · <tspan fill="#ef4444">SQLite</tspan>
+      </text>
+    </g>
+  </g>
+</svg>
+

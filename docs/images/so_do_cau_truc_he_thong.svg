@@ -1,0 +1,298 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" style="background:#ffffff; font-family:'Segoe UI', Arial, sans-serif;">
+  <defs>
+    <!-- Shadows -->
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f294a" flood-opacity="0.06"/>
+    </filter>
+    <filter id="pillGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#2563eb" flood-opacity="0.12"/>
+    </filter>
+    <!-- Markers for arrows -->
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowEmerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#059669"/>
+    </marker>
+    <marker id="arrowNavy" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#1e3a8a"/>
+    </marker>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1920" height="1080" fill="#ffffff"/>
+
+  <!-- ================= TOP HEADER ================= -->
+  <g transform="translate(80, 50)">
+    <!-- Red Badge -->
+    <rect x="0" y="0" width="110" height="28" rx="6" fill="#b91c1c"/>
+    <text x="55" y="19" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">HUST · 2026</text>
+
+    <!-- Title & Subtitle -->
+    <text x="126" y="24" fill="#0f3b75" font-size="28" font-weight="800">SƠ ĐỒ KIẾN TRÚC HỆ THỐNG TRỢ LÝ TUYỂN SINH THÔNG MINH</text>
+    <text x="0" y="58" fill="#64748b" font-size="15" font-weight="500">
+      Kiến trúc tách lớp 4 tầng: Client &amp; Interaction Layer → FastAPI Gateway → AI RAG Orchestration → Data &amp; Knowledge Base
+    </text>
+  </g>
+
+  <!-- ================= LAYER 1: CLIENT & INTERACTION LAYER ================= -->
+  <!-- Layer Container: (80, 130) W: 1760, H: 170 -->
+  <g transform="translate(80, 130)">
+    <rect width="1760" height="165" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.6"/>
+    <!-- Layer Title Pill -->
+    <rect x="24" y="-14" width="280" height="28" rx="6" fill="#1e3a8a"/>
+    <text x="164" y="5" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">TẦNG 1: CLIENT &amp; INTERACTION</text>
+
+    <!-- 4 Components in Layer 1 -->
+    <!-- Comp 1: Web Chat Widget -->
+    <g transform="translate(30, 26)">
+      <rect width="400" height="115" rx="10" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="14" width="36" height="36" rx="8" fill="#eff6ff"/>
+      <text x="32" y="38" fill="#2563eb" font-size="18" text-anchor="middle">💬</text>
+      <text x="60" y="34" fill="#0f294a" font-size="16" font-weight="800">Web Chat Interface</text>
+      <text x="60" y="56" fill="#64748b" font-size="13">Chatbot tương tác tự nhiên, SSE Streaming</text>
+      <text x="60" y="76" fill="#64748b" font-size="13">Gợi ý câu hỏi nhanh (Chỉ tiêu, Điểm chuẩn, Học phí)</text>
+      <rect x="60" y="86" width="160" height="20" rx="4" fill="#eff6ff"/>
+      <text x="140" y="100" fill="#1d4ed8" font-size="11" font-weight="700" text-anchor="middle">app.js · index.html · style.css</text>
+    </g>
+
+    <!-- Comp 2: Scope Filter & Guidance -->
+    <g transform="translate(460, 26)">
+      <rect width="400" height="115" rx="10" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="14" width="36" height="36" rx="8" fill="#eff6ff"/>
+      <text x="32" y="38" fill="#2563eb" font-size="18" text-anchor="middle">🎯</text>
+      <text x="60" y="34" fill="#0f294a" font-size="16" font-weight="800">Scope Filter &amp; Guidance</text>
+      <text x="60" y="56" fill="#64748b" font-size="13">Lọc câu hỏi theo 68 chương trình cụ thể</text>
+      <text x="60" y="76" fill="#64748b" font-size="13">So sánh đối chiếu giữa 2–3 ngành đào tạo</text>
+      <rect x="60" y="86" width="170" height="20" rx="4" fill="#eff6ff"/>
+      <text x="145" y="100" fill="#1d4ed8" font-size="11" font-weight="700" text-anchor="middle">Program Guidance Modal</text>
+    </g>
+
+    <!-- Comp 3: Staff Dashboard -->
+    <g transform="translate(890, 26)">
+      <rect width="400" height="115" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="14" width="36" height="36" rx="8" fill="#f0fdf4"/>
+      <text x="32" y="38" fill="#16a34a" font-size="18" text-anchor="middle">👥</text>
+      <text x="60" y="34" fill="#0f294a" font-size="16" font-weight="800">Staff Portal (/staff)</text>
+      <text x="60" y="56" fill="#64748b" font-size="13">Cổng tiếp nhận ticket cán bộ tuyển sinh</text>
+      <text x="60" y="76" fill="#64748b" font-size="13">Xử lý 1-1 các thắc mắc chính sách đặc thù</text>
+      <rect x="60" y="86" width="140" height="20" rx="4" fill="#dcfce7"/>
+      <text x="130" y="100" fill="#15803d" font-size="11" font-weight="700" text-anchor="middle">staff.html · staff.js</text>
+    </g>
+
+    <!-- Comp 4: Admin Portal -->
+    <g transform="translate(1320, 26)">
+      <rect width="410" height="115" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="14" width="36" height="36" rx="8" fill="#faf5ff"/>
+      <text x="32" y="38" fill="#9333ea" font-size="18" text-anchor="middle">⚙️</text>
+      <text x="60" y="34" fill="#0f294a" font-size="16" font-weight="800">Admin Portal (/admin)</text>
+      <text x="60" y="56" fill="#64748b" font-size="13">Quản lý tài khoản, phân công ticket cán bộ</text>
+      <text x="60" y="76" fill="#64748b" font-size="13">Thống kê số lượng vé &amp; tỷ lệ phản hồi</text>
+      <rect x="60" y="86" width="150" height="20" rx="4" fill="#f3e8ff"/>
+      <text x="135" y="100" fill="#7e22ce" font-size="11" font-weight="700" text-anchor="middle">admin.html · admin.js</text>
+    </g>
+  </g>
+
+  <!-- Connective Arrows: Layer 1 -> Layer 2 -->
+  <line x1="280" y1="295" x2="280" y2="340" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <line x1="660" y1="295" x2="660" y2="340" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <line x1="1090" y1="295" x2="1090" y2="340" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowEmerald)"/>
+  <line x1="1525" y1="295" x2="1525" y2="340" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowEmerald)"/>
+
+  <!-- ================= LAYER 2: API & GATEWAY LAYER ================= -->
+  <!-- Layer Container: (80, 345) W: 1760, H: 140 -->
+  <g transform="translate(80, 345)">
+    <rect width="1760" height="135" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.6"/>
+    <!-- Layer Title Pill -->
+    <rect x="24" y="-14" width="280" height="28" rx="6" fill="#1e3a8a"/>
+    <text x="164" y="5" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">TẦNG 2: FASTAPI BACKEND GATEWAY</text>
+
+    <!-- 4 API Endpoints Blocks -->
+    <g transform="translate(30, 22)">
+      <rect width="390" height="90" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="12" width="56" height="22" rx="4" fill="#dbeafe"/>
+      <text x="42" y="27" fill="#1e40af" font-size="11" font-weight="800" text-anchor="middle">POST</text>
+      <text x="80" y="28" fill="#0f294a" font-size="15" font-weight="800">/api/v1/ask</text>
+      <text x="14" y="55" fill="#64748b" font-size="13">Chat Q&amp;A bất đồng bộ, stream câu trả lời</text>
+      <text x="14" y="74" fill="#64748b" font-size="13">Bảo vệ rate limit, phiên cookie bảo mật</text>
+    </g>
+
+    <g transform="translate(450, 22)">
+      <rect width="400" height="90" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="12" width="52" height="22" rx="4" fill="#dcfce7"/>
+      <text x="40" y="27" fill="#15803d" font-size="11" font-weight="800" text-anchor="middle">GET</text>
+      <text x="76" y="28" fill="#0f294a" font-size="15" font-weight="800">/api/v1/programs</text>
+      <text x="14" y="55" fill="#64748b" font-size="13">Cung cấp danh mục 68 mã chương trình đào tạo</text>
+      <text x="14" y="74" fill="#64748b" font-size="13">Gợi ý nhóm ngành &amp; bộ lọc tìm kiếm nhanh</text>
+    </g>
+
+    <g transform="translate(880, 22)">
+      <rect width="400" height="90" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="12" width="56" height="22" rx="4" fill="#dbeafe"/>
+      <text x="42" y="27" fill="#1e40af" font-size="11" font-weight="800" text-anchor="middle">POST</text>
+      <text x="80" y="28" fill="#0f294a" font-size="15" font-weight="800">/api/v1/tickets &amp; handover</text>
+      <text x="14" y="55" fill="#64748b" font-size="13">Tiếp nhận yêu cầu tư vấn 1-click từ thí sinh</text>
+      <text x="14" y="74" fill="#64748b" font-size="13">Đồng bộ trạng thái vé: waiting → in_progress → resolved</text>
+    </g>
+
+    <g transform="translate(1310, 22)">
+      <rect width="420" height="90" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="12" width="52" height="22" rx="4" fill="#dcfce7"/>
+      <text x="40" y="27" fill="#15803d" font-size="11" font-weight="800" text-anchor="middle">GET</text>
+      <text x="76" y="28" fill="#0f294a" font-size="15" font-weight="800">/api/v1/source/pdf &amp; admin</text>
+      <text x="14" y="55" fill="#64748b" font-size="13">Phục vụ xem trực tiếp 51 trang PDF đề án gốc</text>
+      <text x="14" y="74" fill="#64748b" font-size="13">API quản trị viên &amp; thống kê chỉ số tuyển sinh</text>
+    </g>
+  </g>
+
+  <!-- Connective Arrows: Layer 2 -> Layer 3 -->
+  <line x1="280" y1="480" x2="280" y2="525" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <line x1="1080" y1="480" x2="1080" y2="525" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowEmerald)"/>
+
+  <!-- ================= LAYER 3: AI ORCHESTRATION & RAG ENGINE ================= -->
+  <!-- Layer Container: (80, 530) W: 1760, H: 220 -->
+  <g transform="translate(80, 530)">
+    <rect width="1760" height="220" rx="14" fill="#f0f9ff" stroke="#bfdbfe" stroke-width="1.8"/>
+    <!-- Layer Title Pill -->
+    <rect x="24" y="-14" width="310" height="28" rx="6" fill="#0284c7"/>
+    <text x="179" y="5" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">TẦNG 3: AI ORCHESTRATION &amp; RAG ENGINE</text>
+
+    <!-- 4 Pipeline Stages in Layer 3 -->
+    <!-- Stage 1: Intent Routing -->
+    <g transform="translate(30, 26)">
+      <rect width="390" height="165" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="14" width="30" height="30" rx="6" fill="#eff6ff"/>
+      <text x="29" y="35" fill="#2563eb" font-size="15" font-weight="800" text-anchor="middle">1</text>
+      <text x="54" y="35" fill="#0f294a" font-size="16" font-weight="800">Intent Router &amp; Classifier</text>
+      <line x1="14" y1="52" x2="376" y2="52" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="14" y="74" fill="#334155" font-size="13" font-weight="600">• Phân loại ý định tuyển sinh:</text>
+      <text x="26" y="94" fill="#64748b" font-size="12.5">Điểm chuẩn · Chỉ tiêu · Học phí · Học bổng</text>
+      <text x="14" y="118" fill="#334155" font-size="13" font-weight="600">• Trích xuất thực thể (NER):</text>
+      <text x="26" y="138" fill="#64748b" font-size="12.5">Mã ngành (IT1, EE2...) · Năm 2026 · Phương thức</text>
+      <text x="14" y="158" fill="#1d4ed8" font-size="11.5" font-weight="700">src/services/admissions.py</text>
+    </g>
+
+    <!-- Arrow Stage 1 -> 2 -->
+    <line x1="425" y1="108" x2="455" y2="108" stroke="#0284c7" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Stage 2: Hybrid Retrieval -->
+    <g transform="translate(460, 26)">
+      <rect width="400" height="165" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="14" width="30" height="30" rx="6" fill="#eff6ff"/>
+      <text x="29" y="35" fill="#2563eb" font-size="15" font-weight="800" text-anchor="middle">2</text>
+      <text x="54" y="35" fill="#0f294a" font-size="16" font-weight="800">Hybrid Retrieval Engine</text>
+      <line x1="14" y1="52" x2="386" y2="52" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="14" y="74" fill="#334155" font-size="13" font-weight="600">• Dense Semantic Search:</text>
+      <text x="26" y="94" fill="#64748b" font-size="12.5">Tìm kiếm theo ngữ nghĩa câu hỏi tự nhiên</text>
+      <text x="14" y="118" fill="#334155" font-size="13" font-weight="600">• Exact Keyword &amp; Table Match:</text>
+      <text x="26" y="138" fill="#64748b" font-size="12.5">Khớp chính xác mã ngành và bảng số liệu</text>
+      <text x="14" y="158" fill="#1d4ed8" font-size="11.5" font-weight="700">src/services/retrieval.py</text>
+    </g>
+
+    <!-- Arrow Stage 2 -> 3 -->
+    <line x1="865" y1="108" x2="895" y2="108" stroke="#0284c7" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Stage 3: Grounding Gate -->
+    <g transform="translate(900, 26)">
+      <rect width="400" height="165" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="2" filter="url(#cardShadow)"/>
+      <rect x="14" y="14" width="30" height="30" rx="6" fill="#eff6ff"/>
+      <text x="29" y="35" fill="#2563eb" font-size="15" font-weight="800" text-anchor="middle">3</text>
+      <text x="54" y="35" fill="#0f294a" font-size="16" font-weight="800">Grounding Gate (Bộ Lọc)</text>
+      <line x1="14" y1="52" x2="386" y2="52" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="14" y="74" fill="#334155" font-size="13" font-weight="600">• Citation Verification:</text>
+      <text x="26" y="94" fill="#64748b" font-size="12.5">Đối chiếu câu chữ với trích đoạn đề án gốc</text>
+      <text x="14" y="118" fill="#334155" font-size="13" font-weight="600">• Zero-Hallucination Safe Fallback:</text>
+      <text x="26" y="138" fill="#64748b" font-size="12.5">Từ chối an toàn nếu ngoài tài liệu chính sách</text>
+      <text x="14" y="158" fill="#1d4ed8" font-size="11.5" font-weight="700">src/services/answer_formatter.py</text>
+    </g>
+
+    <!-- Arrow Stage 3 -> 4 -->
+    <line x1="1305" y1="108" x2="1335" y2="108" stroke="#0284c7" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+    <!-- Stage 4: Ticket & Email Store -->
+    <g transform="translate(1340, 26)">
+      <rect width="390" height="165" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="14" width="30" height="30" rx="6" fill="#f0fdf4"/>
+      <text x="29" y="35" fill="#16a34a" font-size="15" font-weight="800" text-anchor="middle">4</text>
+      <text x="54" y="35" fill="#0f294a" font-size="16" font-weight="800">Ticket &amp; Handover Store</text>
+      <line x1="14" y1="52" x2="376" y2="52" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="14" y="74" fill="#334155" font-size="13" font-weight="600">• Handoff Workflow:</text>
+      <text x="26" y="94" fill="#64748b" font-size="12.5">Chuyển tiếp câu hỏi cần cán bộ xử lý</text>
+      <text x="14" y="118" fill="#334155" font-size="13" font-weight="600">• Notification Service:</text>
+      <text x="26" y="138" fill="#64748b" font-size="12.5">Thông báo qua Email &amp; Web notification</text>
+      <text x="14" y="158" fill="#15803d" font-size="11.5" font-weight="700">src/services/store.py · email.py</text>
+    </g>
+  </g>
+
+  <!-- Connective Arrows: Layer 3 -> Layer 4 -->
+  <line x1="660" y1="750" x2="660" y2="795" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <line x1="1525" y1="750" x2="1525" y2="795" stroke="#059669" stroke-width="2.5" marker-end="url(#arrowEmerald)"/>
+
+  <!-- ================= LAYER 4: DATA & KNOWLEDGE BASE ================= -->
+  <!-- Layer Container: (80, 800) W: 1760, H: 175 -->
+  <g transform="translate(80, 800)">
+    <rect width="1760" height="175" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.6"/>
+    <!-- Layer Title Pill -->
+    <rect x="24" y="-14" width="310" height="28" rx="6" fill="#1e3a8a"/>
+    <text x="179" y="5" fill="#ffffff" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">TẦNG 4: DATA &amp; KNOWLEDGE BASE</text>
+
+    <!-- 4 Data Repositories -->
+    <!-- Data 1: 51 Trang Đề án K71 -->
+    <g transform="translate(30, 24)">
+      <rect width="390" height="125" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="14" width="36" height="36" rx="8" fill="#fef2f2"/>
+      <text x="32" y="38" fill="#dc2626" font-size="18" text-anchor="middle">📄</text>
+      <text x="60" y="34" fill="#0f294a" font-size="16" font-weight="800">51 Trang Đề Án Tuyển Sinh</text>
+      <text x="14" y="65" fill="#475569" font-size="13">Bóc tách toàn bộ trang văn bản, điều khoản,</text>
+      <text x="14" y="85" fill="#475569" font-size="13">bảng biểu quy đổi chứng chỉ và tiêu chuẩn tuyển sinh</text>
+      <rect x="14" y="96" width="230" height="20" rx="4" fill="#fef2f2"/>
+      <text x="129" y="110" fill="#b91c1c" font-size="11" font-weight="700" text-anchor="middle">data/extracted/hust-admissions-k71</text>
+    </g>
+
+    <!-- Data 2: Normalized Datasets 68 ngành -->
+    <g transform="translate(450, 24)">
+      <rect width="400" height="125" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="14" width="36" height="36" rx="8" fill="#eff6ff"/>
+      <text x="32" y="38" fill="#2563eb" font-size="18" text-anchor="middle">📊</text>
+      <text x="60" y="34" fill="#0f294a" font-size="16" font-weight="800">Normalized Datasets (JSONL v2)</text>
+      <text x="14" y="65" fill="#475569" font-size="13">Kho dữ liệu đã cấu trúc hóa 68 ngành đào tạo,</text>
+      <text x="14" y="85" fill="#475569" font-size="13">điểm chuẩn lịch sử 2024–2025, học bổng &amp; học phí</text>
+      <rect x="14" y="96" width="180" height="20" rx="4" fill="#eff6ff"/>
+      <text x="104" y="110" fill="#1d4ed8" font-size="11" font-weight="700" text-anchor="middle">data/normalized/*.jsonl</text>
+    </g>
+
+    <!-- Data 3: SQLite Store -->
+    <g transform="translate(880, 24)">
+      <rect width="400" height="125" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="14" width="36" height="36" rx="8" fill="#f0fdf4"/>
+      <text x="32" y="38" fill="#16a34a" font-size="18" text-anchor="middle">💾</text>
+      <text x="60" y="34" fill="#0f294a" font-size="16" font-weight="800">SQLite &amp; Ticket Persistence</text>
+      <text x="14" y="65" fill="#475569" font-size="13">Lưu trữ phiên hội thoại, lịch sử yêu cầu hỗ trợ,</text>
+      <text x="14" y="85" fill="#475569" font-size="13">phản hồi cán bộ và phân công xử lý ticket</text>
+      <rect x="14" y="96" width="160" height="20" rx="4" fill="#dcfce7"/>
+      <text x="94" y="110" fill="#15803d" font-size="11" font-weight="700" text-anchor="middle">data/app.db (SQLite)</text>
+    </g>
+
+    <!-- Data 4: Evaluation & QA -->
+    <g transform="translate(1310, 24)">
+      <rect width="420" height="125" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="14" y="14" width="36" height="36" rx="8" fill="#fffbeb"/>
+      <text x="32" y="38" fill="#d97706" font-size="18" text-anchor="middle">🔥</text>
+      <text x="60" y="34" fill="#0f294a" font-size="16" font-weight="800">Evaluation &amp; QA</text>
+      <text x="14" y="65" fill="#475569" font-size="13">Đo token, cache, p50/p95 và lý do fallback,</text>
+      <text x="14" y="85" fill="#475569" font-size="13">kiểm định qua Golden Dataset 130+ câu hỏi tuyển sinh</text>
+      <rect x="14" y="96" width="220" height="20" rx="4" fill="#fef3c7"/>
+      <text x="124" y="110" fill="#b45309" font-size="11" font-weight="700" text-anchor="middle">eval/ · scripts/evaluate_mvp.py</text>
+    </g>
+  </g>
+
+  <!-- ================= FOOTER ================= -->
+  <line x1="80" y1="1005" x2="1840" y2="1005" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="80" y="1038" fill="#64748b" font-size="14" font-weight="600">
+    Hệ thống Trợ lý Tuyển sinh Thông minh HUST 2026
+  </text>
+  <text x="1840" y="1038" fill="#94a3b8" font-size="14" font-weight="600" text-anchor="end">
+    FastAPI · RAG Hybrid Retrieval · Grounding Citation Gate · Human-in-the-Loop
+  </text>
+</svg>
+

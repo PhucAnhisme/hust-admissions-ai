@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mô tả Các Luồng Hoạt Động · Trợ lý Tuyển sinh HUST 2026</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #070a13;
+      color: #f1f5f9;
+      font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .top-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      padding: 14px 22px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    }
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .hust-badge {
+      background: #b91c1c;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: #e2e8f0;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn:hover {
+      background: #27354f;
+      border-color: #64748b;
+      color: #fff;
+    }
+    .btn.primary {
+      background: #b91c1c;
+      border-color: #ef4444;
+      color: #fff;
+    }
+    .btn.primary:hover {
+      background: #dc2626;
+    }
+    .image-wrapper {
+      width: 100%;
+      background: #090d16;
+      border: 1px solid #1e293b;
+      border-radius: 16px;
+      padding: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+    .flow-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 16px;
+      margin-top: 4px;
+    }
+    .flow-card {
+      background: #0f172a;
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .flow-card.sky { border-top: 4px solid #0284c7; }
+    .flow-card.emerald { border-top: 4px solid #059669; }
+    .flow-card.amber { border-top: 4px solid #d97706; }
+    
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .flow-tag {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.5px;
+    }
+    .sky .flow-tag { background: #0284c7; color: #fff; }
+    .emerald .flow-tag { background: #059669; color: #fff; }
+    .amber .flow-tag { background: #d97706; color: #fff; }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .step-item {
+      display: flex;
+      gap: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: #cbd5e1;
+    }
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .sky .step-num { background: #0369a1; color: #e0f2fe; }
+    .emerald .step-num { background: #047857; color: #d1fae5; }
+    .amber .step-num { background: #b45309; color: #fef3c7; }
+
+    .flow-footer {
+      border-top: 1px solid #1e293b;
+      padding-top: 10px;
+      font-size: 12px;
+      color: #94a3b8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .highlight {
+      font-weight: 600;
+    }
+    .sky .highlight { color: #38bdf8; }
+    .emerald .highlight { color: #34d399; }
+    .amber .highlight { color: #fbbf24; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-toolbar">
+      <div class="brand-title">
+        <span class="hust-badge">HUST 2026</span>
+        <span>Sơ Đồ Các Luồng Hoạt Động (Core Processing Workflows)</span>
+      </div>
+      <div class="actions">
+        <a class="btn" href="architecture_diagram.html">🏛️ Sơ đồ Kiến trúc</a>
+        <button class="btn" onclick="window.print()">🖨️ In / Xuất PDF</button>
+        <a class="btn" href="cac_luong_hoat_dong_he_thong.png" download="cac_luong_hoat_dong_he_thong.png">🖼️ Tải PNG 4K</a>
+        <a class="btn primary" href="cac_luong_hoat_dong_he_thong.svg" download="cac_luong_hoat_dong_he_thong.svg">⬇️ Tải file SVG gốc</a>
+      </div>
+    </div>
+
+    <!-- Main Infographic Diagram View -->
+    <div class="image-wrapper">
+      <img src="cac_luong_hoat_dong_he_thong.svg" alt="Sơ đồ các luồng hoạt động chính của hệ thống Trợ lý tuyển sinh HUST 2026">
+    </div>
+
+    <!-- 3 Breakdown Flow Cards -->
+    <div class="flow-cards">
+      <!-- Luồng 1 -->
+      <div class="flow-card sky">
+        <div class="card-head">
+          <span class="flow-tag">LUỒNG 1</span>
+          <span class="highlight">Tốc độ &lt; 1s (SSE)</span>
+        </div>
+        <div class="card-title">Hỏi Đáp RAG &amp; Kiểm Chứng Nguồn</div>
+        <ul class="steps-list">
+          <li class="step-item">
+            <span class="step-num">1</span>
+            <div><b>Thí sinh gửi câu hỏi:</b> Qua Web Chat giao diện trực quan, có thể chọn ghim mã ngành (Scope).</div>
+          </li>
+          <li class="step-item">
+            <span class="step-num">2</span>
+            <div><b>FastAPI Intent &amp; Hybrid Search:</b> Nhận diện ý định và truy vấn đồng thời BM25 + Vector trên 51 trang PDF Đề án K71.</div>
+          </li>
+          <li class="step-item">
+            <span class="step-num">3</span>
+            <div><b>Cổng kiểm chứng Grounding Gate:</b> Đối chiếu văn bản gốc, triệt tiêu ảo giác, xác thực số trang chính xác 100%.</div>
+          </li>
+          <li class="step-item">
+            <span class="step-num">4</span>
+            <div><b>Phản hồi Realtime SSE:</b> Trả lời mượt mà từng từ và hiển thị liên kết mở đúng trang PDF minh chứng.</div>
+          </li>
+        </ul>
+        <div class="flow-footer">
+          <span>Áp dụng: Quy chế, điểm chuẩn, điều kiện tuyển</span>
+          <span class="highlight">Chống ảo giác tuyệt đối</span>
+        </div>
+      </div>
+
+      <!-- Luồng 2 -->
+      <div class="flow-card emerald">
+        <div class="card-head">
+          <span class="flow-tag">LUỒNG 2</span>
+          <span class="highlight">Chính xác 100% CSDL</span>
+        </div>
+        <div class="card-title">Tra Cứu &amp; Đối Chiếu 68 Chương Trình</div>
+        <ul class="steps-list">
+          <li class="step-item">
+            <span class="step-num">1</span>
+            <div><b>Chọn mã ngành so sánh:</b> Thí sinh chọn 2 hoặc nhiều mã ngành muốn đối chiếu (VD: IT1 vs IT-E10).</div>
+          </li>
+          <li class="step-item">
+            <span class="step-num">2</span>
+            <div><b>Truy vấn API Programs:</b> Gọi trực tiếp endpoint <code>/api/v1/programs</code> để lấy dữ liệu có cấu trúc chuẩn JSONL.</div>
+          </li>
+          <li class="step-item">
+            <span class="step-num">3</span>
+            <div><b>Trích xuất chỉ số trọng yếu:</b> Tự động so khớp chỉ tiêu, phương thức xét tuyển, điểm chuẩn 3 năm và học phí.</div>
+          </li>
+          <li class="step-item">
+            <span class="step-num">4</span>
+            <div><b>Bảng so sánh trực quan:</b> Hiển thị thẻ đối chiếu thông số song song, giúp thí sinh dễ dàng chọn nguyện vọng 1, 2.</div>
+          </li>
+        </ul>
+        <div class="flow-footer">
+          <span>Áp dụng: Phân vân giữa các hệ đào tạo</span>
+          <span class="highlight">Dữ liệu cấu trúc JSONL</span>
+        </div>
+      </div>
+
+      <!-- Luồng 3 -->
+      <div class="flow-card amber">
+        <div class="card-head">
+          <span class="flow-tag">LUỒNG 3</span>
+          <span class="highlight">Cổng cán bộ /staff</span>
+        </div>
+        <div class="card-title">Điều Phối Vé Tư Vấn &amp; Cán Bộ Hỗ Trợ</div>
+        <ul class="steps-list">
+          <li class="step-item">
+            <span class="step-num">1</span>
+            <div><b>Phát hiện câu hỏi ngoại lệ:</b> Nhận diện trường hợp cá biệt nằm ngoài văn bản hoặc thí sinh bấm "Hỏi cán bộ".</div>
+          </li>
+          <li class="step-item">
+            <span class="step-num">2</span>
+            <div><b>Khởi tạo Ticket hỗ trợ:</b> Lưu thông tin thí sinh, câu hỏi và ngữ cảnh vào CSDL SQLite (Mã vé #HUST-2026-xxx).</div>
+          </li>
+          <li class="step-item">
+            <span class="step-num">3</span>
+            <div><b>Cán bộ tiếp nhận tại <code>/staff</code>:</b> Thầy cô kiểm tra ngữ cảnh, xem hồ sơ và giải đáp trực tiếp trên portal.</div>
+          </li>
+          <li class="step-item">
+            <span class="step-num">4</span>
+            <div><b>Phản hồi Email chính thức:</b> Gửi email xác thực từ <code>tuyensinh@hust.edu.vn</code> tới thí sinh, đảm bảo không sót yêu cầu.</div>
+          </li>
+        </ul>
+        <div class="flow-footer">
+          <span>Áp dụng: Trường hợp đặc thù, thủ tục riêng</span>
+          <span class="highlight">Giải quyết trọn vẹn 100%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

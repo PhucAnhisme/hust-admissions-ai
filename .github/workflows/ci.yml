@@ -1,0 +1,89 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt -r requirements-data-validation.txt
+
+      - name: Validate committed data snapshot without rebuilding
+        run: python -X utf8 scripts/validate_admissions_data.py
+
+      - name: Lint with ruff
+        run: ruff check src/ tests/ scripts/ingest_sources.py scripts/evaluate_mvp.py scripts/check_browser.py
+
+      - name: Run tests
+        run: pytest tests/ -v --tb=short
+        env:
+          APP_ENV: test
+          OPENAI_API_KEY: test-key
+
+      - name: Evaluate local retrieval baseline
+        run: python -m scripts.evaluate_mvp --retrieval bm25 --output data/test-tmp/ci-evaluation.json
+        env:
+          ANSWER_MODE: extractive
+
+      - name: Upload evaluation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mvp-evaluation
+          path: data/test-tmp/ci-evaluation.*
+
+  package:
+    needs: lint-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build application image with RAG dependencies
+        run: docker build --tag hust-admissions-ai:ci .
+      - name: Check Linux RAG dependencies
+        run: >-
+          docker run --rm --entrypoint python hust-admissions-ai:ci -c
+          "import torch, psycopg; from sentence_transformers import SentenceTransformer, CrossEncoder; print('RAG dependencies ready')"
+      - name: Check packaged sources and application startup
+        run: |
+          docker run --detach --name hust-admissions-ci -p 127.0.0.1:8000:8000 \
+            -e APP_ENV=test -e ANSWER_MODE=extractive -e RETRIEVAL_MODE=bm25 \
+            -e PERSISTENT_DATA_DIR=/app/state hust-admissions-ai:ci
+          python - <<'PY'
+          import json
+          import time
+          import urllib.request
+
+          for attempt in range(60):
+              try:
+                  with urllib.request.urlopen('http://127.0.0.1:8000/api/v1/status', timeout=5) as response:
+                      status = json.load(response)
+                  assert status['status'] == 'ready', status
+                  assert status['programs'] == 68, status
+                  assert status['source']['document_count'] == 9, status
+                  assert status['source_error'] is None, status
+                  print('Packaged application and sources are ready')
+                  break
+              except (OSError, AssertionError):
+                  if attempt == 59:
+                      raise
+                  time.sleep(2)
+          PY
+      - name: Container logs and cleanup
+        if: always()
+        run: |
+          docker logs hust-admissions-ci || true
+          docker rm -f hust-admissions-ci || true

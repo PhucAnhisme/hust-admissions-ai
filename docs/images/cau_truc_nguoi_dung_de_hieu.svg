@@ -1,0 +1,223 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" style="background:#0f172a; font-family:'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+
+    <linearGradient id="step1Grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <linearGradient id="hustRedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/>
+      <stop offset="100%" stop-color="#b91c1c"/>
+    </linearGradient>
+
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+
+    <filter id="glowRed" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#ef4444" flood-opacity="0.3"/>
+    </filter>
+
+    <filter id="glowBlue" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#38bdf8" flood-opacity="0.3"/>
+    </filter>
+
+    <filter id="glowGreen" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#10b981" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1280" height="720" fill="url(#bgGrad)"/>
+
+  <!-- ================= TOP HEADER ================= -->
+  <g transform="translate(60, 35)">
+    <!-- Red Accent Pill -->
+    <rect x="0" y="0" width="130" height="28" rx="14" fill="#b91c1c" fill-opacity="0.3" stroke="#ef4444" stroke-width="1.2"/>
+    <text x="65" y="18" fill="#fca5a5" font-size="12" font-weight="800" text-anchor="middle" letter-spacing="1">HUST · 2026</text>
+
+    <!-- Main Title -->
+    <text x="145" y="23" fill="#ffffff" font-size="24" font-weight="800">CÁCH HOẠT ĐỘNG CỦA TRỢ LÝ TUYỂN SINH</text>
+    <text x="0" y="52" fill="#94a3b8" font-size="14.5">Đơn giản, minh bạch và chính xác tuyệt đối — Từ câu hỏi của bạn đến văn bản chính thức của Đại học Bách khoa Hà Nội</text>
+  </g>
+
+  <!-- ================= MAIN 3-STEP USER JOURNEY ================= -->
+
+  <!-- STEP 1: BẠN HỎI -->
+  <g transform="translate(60, 115)">
+    <rect x="0" y="0" width="360" height="440" rx="18" fill="url(#step1Grad)" stroke="#38bdf8" stroke-width="2" filter="url(#glowBlue)"/>
+    
+    <!-- Step Header Badge -->
+    <path d="M 0 18 Q 0 0 18 0 L 342 0 Q 360 0 360 18 L 360 55 L 0 55 Z" fill="#0284c7" fill-opacity="0.2"/>
+    <rect x="18" y="14" width="28" height="28" rx="8" fill="#0284c7"/>
+    <text x="32" y="33" fill="#ffffff" font-size="15" font-weight="800" text-anchor="middle">1</text>
+    <text x="56" y="34" fill="#38bdf8" font-size="16" font-weight="800">BẠN HỎI VÀ TRA CỨU</text>
+
+    <!-- Content Cards inside Step 1 -->
+    <g transform="translate(18, 70)">
+      <!-- Item 1.1 -->
+      <rect x="0" y="0" width="324" height="74" rx="12" fill="#0b1329" stroke="#1e293b" stroke-width="1"/>
+      <text x="16" y="32" font-size="22">🎙️</text>
+      <text x="52" y="28" fill="#ffffff" font-size="14.5" font-weight="700">Hỏi bằng Giọng nói hoặc Gõ chữ</text>
+      <text x="52" y="50" fill="#94a3b8" font-size="12.5">Bấm micro nói trực tiếp hoặc nhập câu hỏi</text>
+
+      <!-- Item 1.2 -->
+      <rect x="0" y="86" width="324" height="74" rx="12" fill="#0b1329" stroke="#1e293b" stroke-width="1"/>
+      <text x="16" y="118" font-size="22">🧮</text>
+      <text x="52" y="114" fill="#ffffff" font-size="14.5" font-weight="700">Công cụ Tính điểm &amp; Đánh giá đỗ</text>
+      <text x="52" y="136" fill="#94a3b8" font-size="12.5">Điểm thi THPT, ĐGTD theo công thức mới Bộ</text>
+
+      <!-- Item 1.3 -->
+      <rect x="0" y="172" width="324" height="74" rx="12" fill="#0b1329" stroke="#1e293b" stroke-width="1"/>
+      <text x="16" y="204" font-size="22">⚖️</text>
+      <text x="52" y="200" fill="#ffffff" font-size="14.5" font-weight="700">So sánh 68 Ngành Đào tạo</text>
+      <text x="52" y="222" fill="#94a3b8" font-size="12.5">Đối chiếu học phí, chỉ tiêu, điểm chuẩn</text>
+
+      <!-- Item 1.4 -->
+      <rect x="0" y="258" width="324" height="88" rx="12" fill="#0b1329" stroke="#1e293b" stroke-width="1"/>
+      <text x="16" y="295" font-size="22">💡</text>
+      <text x="52" y="286" fill="#ffffff" font-size="14.5" font-weight="700">Ví dụ câu hỏi phổ biến:</text>
+      <text x="52" y="308" fill="#38bdf8" font-size="12">"Học phí ngành IT1 năm nay là bao nhiêu?"</text>
+      <text x="52" y="328" fill="#38bdf8" font-size="12">"26 điểm thi TSA có cơ hội đỗ ITE10 không?"</text>
+    </g>
+  </g>
+
+  <!-- Big Arrow 1 -> 2 -->
+  <g transform="translate(432, 310)">
+    <circle cx="16" cy="16" r="22" fill="#0284c7" fill-opacity="0.25"/>
+    <path d="M 6 16 L 24 16 M 18 10 L 25 16 L 18 22" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- STEP 2: AI XỬ LÝ -->
+  <g transform="translate(460, 115)">
+    <rect x="0" y="0" width="360" height="440" rx="18" fill="url(#step1Grad)" stroke="#ef4444" stroke-width="2" filter="url(#glowRed)"/>
+    
+    <!-- Step Header Badge -->
+    <path d="M 0 18 Q 0 0 18 0 L 342 0 Q 360 0 360 18 L 360 55 L 0 55 Z" fill="#b91c1c" fill-opacity="0.25"/>
+    <rect x="18" y="14" width="28" height="28" rx="8" fill="#b91c1c"/>
+    <text x="32" y="33" fill="#ffffff" font-size="15" font-weight="800" text-anchor="middle">2</text>
+    <text x="56" y="34" fill="#f87171" font-size="16" font-weight="800">TRỢ LÝ AI ĐỐI CHIẾU</text>
+
+    <g transform="translate(18, 70)">
+      <!-- Item 2.1 -->
+      <rect x="0" y="0" width="324" height="74" rx="12" fill="#1e131d" stroke="#881337" stroke-width="1"/>
+      <text x="16" y="32" font-size="22">🛡️</text>
+      <text x="52" y="28" fill="#ffffff" font-size="14.5" font-weight="700">Tự động Bảo mật Thông tin</text>
+      <text x="52" y="50" fill="#fca5a5" font-size="12.5">Ẩn số CCCD, SĐT của bạn, bảo vệ riêng tư</text>
+
+      <!-- Item 2.2 -->
+      <rect x="0" y="86" width="324" height="74" rx="12" fill="#1e131d" stroke="#881337" stroke-width="1"/>
+      <text x="16" y="118" font-size="22">📄</text>
+      <text x="52" y="114" fill="#ffffff" font-size="14.5" font-weight="700">Đề án Tuyển sinh 51 Trang Gốc</text>
+      <text x="52" y="136" fill="#fca5a5" font-size="12.5">Quét đúng văn bản chính thức của Bách khoa</text>
+
+      <!-- Item 2.3 -->
+      <rect x="0" y="172" width="324" height="74" rx="12" fill="#1e131d" stroke="#881337" stroke-width="1"/>
+      <text x="16" y="204" font-size="22">🚫</text>
+      <text x="52" y="200" fill="#ffffff" font-size="14.5" font-weight="700">100% Căn cứ — Không Ảo giác</text>
+      <text x="52" y="222" fill="#fca5a5" font-size="12.5">Chỉ trả lời khi có dẫn chứng trong tài liệu</text>
+
+      <!-- Item 2.4 Decision Box -->
+      <rect x="0" y="258" width="324" height="88" rx="12" fill="#281119" stroke="#b91c1c" stroke-width="1.2"/>
+      <text x="16" y="295" font-size="22">⚖️</text>
+      <text x="52" y="286" fill="#ffffff" font-size="14.5" font-weight="700">Chốt chặn Thông minh:</text>
+      <text x="52" y="308" fill="#cbd5e1" font-size="12.5">✓ Đủ căn cứ → Trả lời kèm số trang PDF</text>
+      <text x="52" y="328" fill="#facc15" font-size="12.5">✗ Chưa đủ dữ liệu → Chuyển Cán bộ hỗ trợ</text>
+    </g>
+  </g>
+
+  <!-- Big Arrow 2 -> 3 -->
+  <g transform="translate(832, 310)">
+    <circle cx="16" cy="16" r="22" fill="#059669" fill-opacity="0.25"/>
+    <path d="M 6 16 L 24 16 M 18 10 L 25 16 L 18 22" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+
+  <!-- STEP 3: KẾT QUẢ CHO BẠN -->
+  <g transform="translate(860, 115)">
+    <rect x="0" y="0" width="360" height="440" rx="18" fill="url(#step1Grad)" stroke="#10b981" stroke-width="2" filter="url(#glowGreen)"/>
+    
+    <!-- Step Header Badge -->
+    <path d="M 0 18 Q 0 0 18 0 L 342 0 Q 360 0 360 18 L 360 55 L 0 55 Z" fill="#059669" fill-opacity="0.25"/>
+    <rect x="18" y="14" width="28" height="28" rx="8" fill="#059669"/>
+    <text x="32" y="33" fill="#ffffff" font-size="15" font-weight="800" text-anchor="middle">3</text>
+    <text x="56" y="34" fill="#34d399" font-size="16" font-weight="800">KẾT QUẢ RÕ RÀNG &amp; AN TÂM</text>
+
+    <g transform="translate(18, 70)">
+      <!-- Item 3.1 -->
+      <rect x="0" y="0" width="324" height="74" rx="12" fill="#091f1a" stroke="#065f46" stroke-width="1"/>
+      <text x="16" y="32" font-size="22">🔊</text>
+      <text x="52" y="28" fill="#ffffff" font-size="14.5" font-weight="700">Nghe Đọc Câu Trả Lời (TTS 1.18x)</text>
+      <text x="52" y="50" fill="#a7f3d0" font-size="12.5">Giọng đọc tiếng Việt tự nhiên, dứt khoát</text>
+
+      <!-- Item 3.2 -->
+      <rect x="0" y="86" width="324" height="74" rx="12" fill="#091f1a" stroke="#065f46" stroke-width="1"/>
+      <text x="16" y="118" font-size="22">🔗</text>
+      <text x="52" y="114" fill="#ffffff" font-size="14.5" font-weight="700">Xem Tận Mắt Trang PDF Gốc</text>
+      <text x="52" y="136" fill="#a7f3d0" font-size="12.5">Bấm vào badge (#page=x) để kiểm chứng ngay</text>
+
+      <!-- Item 3.3 -->
+      <rect x="0" y="172" width="324" height="74" rx="12" fill="#091f1a" stroke="#065f46" stroke-width="1"/>
+      <text x="16" y="204" font-size="22">🎯</text>
+      <text x="52" y="200" fill="#ffffff" font-size="14.5" font-weight="700">Đánh Giá Cơ Hội Trúng Tuyển</text>
+      <text x="52" y="222" fill="#a7f3d0" font-size="12.5">3 mức: 🟢 Cao · 🟡 Tiềm năng · 🔴 Thử thách</text>
+
+      <!-- Item 3.4 -->
+      <rect x="0" y="258" width="324" height="88" rx="12" fill="#1b1c10" stroke="#ca8a04" stroke-width="1.2"/>
+      <text x="16" y="295" font-size="22">🎫</text>
+      <text x="52" y="286" fill="#facc15" font-size="14.5" font-weight="700">Gặp Trực Tiếp Cán Bộ Trường</text>
+      <text x="52" y="308" fill="#cbd5e1" font-size="12.5">Cán bộ tuyển sinh tiếp nhận và trả lời</text>
+      <text x="52" y="328" fill="#fef08a" font-size="12">📧 Tự động gửi Email thông báo khi có phản hồi</text>
+    </g>
+  </g>
+
+  <!-- ================= BOTTOM SUPPORT ROLES ================= -->
+  <g transform="translate(60, 575)">
+    <!-- Frame -->
+    <rect x="0" y="0" width="1160" height="110" rx="16" fill="#0b1329" stroke="#334155" stroke-width="1.2"/>
+
+    <!-- Left Badge -->
+    <rect x="20" y="18" width="230" height="74" rx="12" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <text x="35" y="44" font-size="24">👥</text>
+    <text x="70" y="42" fill="#ffffff" font-size="14" font-weight="700">Đội Ngũ Đồng Hành</text>
+    <text x="70" y="62" fill="#94a3b8" font-size="11.5">Phía sau trợ lý thông minh</text>
+
+    <!-- Staff Role -->
+    <g transform="translate(270, 18)">
+      <rect x="0" y="0" width="425" height="74" rx="12" fill="#0f172a" stroke="#0284c7" stroke-width="1"/>
+      <text x="18" y="44" font-size="22">👔</text>
+      <text x="52" y="34" fill="#38bdf8" font-size="13.5" font-weight="700">Cán Bộ Tuyển Sinh HUST (/staff)</text>
+      <text x="52" y="55" fill="#cbd5e1" font-size="12">Hàng chờ cập nhật 5s · Khóa xử lý độc quyền · Gửi email cho thí sinh</text>
+    </g>
+
+    <!-- Admin Role -->
+    <g transform="translate(715, 18)">
+      <rect x="0" y="0" width="425" height="74" rx="12" fill="#0f172a" stroke="#d97706" stroke-width="1"/>
+      <text x="18" y="44" font-size="22">⚙️</text>
+      <text x="52" y="34" fill="#fbbf24" font-size="13.5" font-weight="700">Quản Trị Viên Hệ Thống (/admin)</text>
+      <text x="52" y="55" fill="#cbd5e1" font-size="12">Biểu đồ tổng quan · Phân công ticket · Quản lý tài khoản cán bộ trực</text>
+    </g>
+  </g>
+
+</svg>
+
